@@ -17,10 +17,14 @@ Built with [vue3](https://vuejs.org/guide/introduction.html), [vite](https://git
   - SiteNavigaion
     - BaseModal
 
+# API
+
+- [openweathermap](https://openweathermap.org/api)
+- [mapbox](https://api.mapbox.com/geocoding/v5/mapbox.places/)
+
 # reference
 
 - [net_ninja_vue_3_weather_app](https://github.com/johnkomarnicki/net_ninja_vue_3_weather_app)
-
 
 # Improve
 
