@@ -1,14 +1,30 @@
 # weather-app
 
-> vue3 + tailwind css
+Built with [vue3](https://vuejs.org/guide/introduction.html), [vite](https://github.com/vitejs/vite) and [tailwind css](https://tailwindcss.com/) 
 
-1. vue3 vue-router
-2. npm i -D tailwindcss postcss autoprefixer
+# Component Structure
+
+- App
+  - HomeView
+    - CityList
+      - CityCard
+    - CityCardSkeleton
+      - AnimatedPlaceholder
+    - CityView
+      - AsyncCityView
+      - CityViewSkeleton
+        - AnimatedPlaceholder
+  - SiteNavigaion
+    - BaseModal
+
+# reference
+
+- [net_ninja_vue_3_weather_app](https://github.com/johnkomarnicki/net_ninja_vue_3_weather_app)
 
 
-组件结构：
+# Improve
 
-improve:
-- [x] temp: F => C
-- [ ] 确保已添加的城市重新加载时不再显示加号 SiteNavigation.vue
-- [ ] remove 在未添加的城市也会显示
+- Temperature unit: F => C
+- Make sure that added cities are not displayed `+` when reloading 
+- `remove` button will also be displayed in cities not added
+

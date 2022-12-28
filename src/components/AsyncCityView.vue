@@ -124,13 +124,15 @@
       </div>
     </div>
 
-    <div
-      class="flex items-center gap-2 py-12 text-white cursor-pointer duration-150 hover:text-red-500"
-      @click="removeCity"
-    >
-      <i class="fa-solid fa-trash"></i>
-      <p>Remove City</p>
-    </div>
+    <template v-if="isPrev()">
+      <div
+        class="flex items-center gap-2 py-12 text-white cursor-pointer duration-150 hover:text-red-500"
+        @click="removeCity"
+      >
+        <i class="fa-solid fa-trash"></i>
+        <p>Remove City</p>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -175,7 +177,7 @@ weatherData.daily.forEach(day => {
   day.temp.max = (day.temp.max-32)/1.8;
   day.temp.min = (day.temp.min-32)/1.8;
 })
-
+// 删除已添加的城市
 const router = useRouter();
 const removeCity = () => {
   const cities = JSON.parse(localStorage.getItem("savedCities"));
@@ -190,5 +192,19 @@ const removeCity = () => {
     name: "home",
   });
 };
+
+// 确保未添加的城市重新加载时不显示 rm
+const isPrev = () => {
+  let cities = JSON.parse(
+      localStorage.getItem("savedCities")
+    );
+  for( let city of cities) {
+    if(city.city === route.params.city) {
+      return true
+    }
+  }
+  return false
+}
+
 
 </script>

@@ -18,7 +18,7 @@
         <i
           class="fa-solid fa-plus text-xl hover:text-weather-secondary duration-150 cursor-pointer"
           @click="addCity"
-          v-if="route.query.preview"
+          v-if="route.query.preview && isPrev()"
         ></i>
       </div>
 
@@ -100,6 +100,17 @@ const addCity = () => {
 };
 
 // 确保已添加的城市重新加载时不再显示加号
+const isPrev = () => {
+  let cities = JSON.parse(
+      localStorage.getItem("savedCities")
+    );
+  for( let city of cities) {
+    if(city.city === route.params.city) {
+      return false
+    }
+  }
+  return true
+}
 
 const modalActive = ref(null);
 const toggleModal = () => {
