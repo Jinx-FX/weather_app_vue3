@@ -1,4 +1,4 @@
-# weather-app
+# weather_app_vue3
 
 Built with [vue3](https://vuejs.org/guide/introduction.html), [vite](https://github.com/vitejs/vite) and [tailwind css](https://tailwindcss.com/) 
 
